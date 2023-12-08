@@ -1,3 +1,11 @@
+"""
+This are some functions that are used in the significance calculator 
+and in the significance calculator notebook
+
+The significance is calculated using the Li & Ma formula
+___author___ = "Federico Bontempo"
+"""
+
 import argparse
 import numpy as np
 from scipy.stats import norm
@@ -41,6 +49,9 @@ def calculate_significance(
     N_off,
     alpha,
 ):
+    """
+    The significance is calculated using the Li & Ma formula
+    """
     significance = (
         2**0.5
         * (
@@ -55,7 +66,9 @@ def calculate_significance(
 def calculate_Gaussian_probability(
     significance,
 ):
-    # Calculate the p = N( u = S; 0, 1),
-    # probabilty of the bg producing the signal
-    # given the significance and assiuming a normal distribution
+    """
+    Calculate the p = N( u = S; 0, 1),
+    probabilty of the bg producing the signal
+    given the significance and assiuming a normal distribution
+    """
     return norm.sf(significance)

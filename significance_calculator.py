@@ -1,3 +1,22 @@
+"""
+This script calculates the significance of a source given the number of
+events coming from the source and the number of background events.
+The significance is calculated using the Li & Ma formula.
+The probability of the background producing the signal is also calculated
+assuming a normal distribution.
+
+The script can be run from the command line as:
+    
+        python significance_calculator.py -s 50 -bg 100 -a 1.0
+    
+    where -s is the number of events coming from the source,
+    -bg is the number of background events,
+    -a is the ratio between time on source and time off source.
+
+__author__ = "Federico Bontempo"
+"""
+
+
 from utils.utils_functions import (
     calculate_significance,
     calculate_Gaussian_probability,
